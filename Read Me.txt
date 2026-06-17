@@ -1,8 +1,6 @@
-README – Post-Block-Assignment 3 Task B (MEng)
-Data Science 774/874 – Naïve Bayes and Federated Learning for SMS Spam Detection
-Student: F. Saayman
-Student number: 15997359
-Stellenbosch University : May 2026
+README  Naïve Bayes and Federated Learning for SMS Spam Detection
+F. Saayman
+
 
 ===============================================================================
 1. Contents
@@ -10,7 +8,7 @@ Stellenbosch University : May 2026
 
 This folder contains the code and resources for Task B:
 
-- `A3B_15997359.ipynb` – main Google colab notebook OR a3b15997359.py file with:
+- `task b.ipynb` – main Google colab notebook OR task b.py file with:
   * data loading and preprocessing (clean_message, digit preservation)
   * centralised Naïve Bayes pipeline (unigram and unigram+bigram TF‑IDF, custom NB)
   * StratifiedGroupKFold (5 folds, groups = raw message hash)
