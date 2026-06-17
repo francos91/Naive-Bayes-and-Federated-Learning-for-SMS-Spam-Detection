@@ -74,7 +74,7 @@ To install all required packages, run:
 
 1. Ensure `synthetic_sms.csv` is located in the **same folder** as the notebook.
 
-2. Open `A3B_15997359.ipynb` in Jupyter, VS Code, or upload to Google Colab.
+2. Open `task b.ipynb` in Jupyter, VS Code, or upload to Google Colab.
 
 3. Run all cells from top to bottom. The notebook will:
    - Load and clean the SMS dataset
@@ -90,8 +90,6 @@ Random seeds are fixed (e.g., `random_state=112`, `np.random.seed(112)`) to make
 4. Notes
 ===============================================================================
 
-- The abstract, main implementation diagram, and declaration of generative AI use are provided in `A3reportB15997359.pdf`.
-- The primary explanation of results and methodology is in the video presentation `A3videoB15997359.mp4`.
 - This code is intended as a proof‑of‑concept research implementation, not a production system.
 - If you re-run the notebook, the saved figures in `A3_OUTPUT/` will be overwritten; ensure you back them up if you need the original outputs.
 
