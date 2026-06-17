@@ -1,6 +1,20 @@
 README  Naïve Bayes and Federated Learning for SMS Spam Detection
 F. Saayman
-
+Abstract:
+SMS spam imposes financial and reputational costs on mobile operators, while South
+Africa’s POPIA prohibits centralising raw message content. This work applies
+CRISP-DM to a synthetic SMS dataset (5,700 messages, 12.3% spam) using Python
+3.0. A custom Multinomial Naive Bayes classifier is applied to TF-IDF features.
+Unigrams and bigrams (representations) combined with stratified group k-fold (groups
+= raw message hash) achieves 98.41% accuracy, 100% spam recall, and 79 false
+positives. A horizontal federated simulation using bag-of-words counts and five clients
+shows that summed per-class counts reproduce the central bag-of-words model
+exactly (93.28% accuracy). Adding local differential privacy (ε=0.02) reduces recall to
+95.6% while accuracy rises to around 96.7%, illustrating a privacy-utility trade-off.
+Robustness tests under client dropout (2/5 active) and extreme capacity limits give a
+mean accuracy of 95.80% (±4.42%) over ten runs. Naive Bayes is highly feasible for
+federated SMS spam detection on this dataset, but privacy parameters must be tuned
+to avoid degrading recall.
 
 ===============================================================================
 1. Contents
