@@ -1,0 +1,88 @@
+README – Post-Block-Assignment 3 Task B (MEng)
+Data Science 774/874 – Naïve Bayes and Federated Learning for SMS Spam Detection
+Student: F. Saayman
+Student number: 15997359
+Stellenbosch University : May 2026
+
+===============================================================================
+1. Contents
+===============================================================================
+
+This folder contains the code and resources for Task B:
+
+- `A3B_15997359.ipynb` – main Google colab notebook OR a3b15997359.py file with:
+  * data loading and preprocessing (clean_message, digit preservation)
+  * centralised Naïve Bayes pipeline (unigram and unigram+bigram TF‑IDF, custom NB)
+  * StratifiedGroupKFold (5 folds, groups = raw message hash)
+  * federated Naïve Bayes simulation (bag‑of‑words counts, 5 clients, server aggregation)
+  * differential privacy experiments (ε = 0.02 and ε = 1.0, Laplace noise) with fixed seed 112
+  * robustness heterogeneity experiments (client dropout 2/5, extreme capacity limits)
+  * generation of all figures (saved in `A3_OUTPUT/`)
+
+- `synthetic_sms.csv` – synthetic SMS dataset (spam/ham, 5,700 messages) – included.
+
+- `requirements.txt` – list of Python package dependencies (minimal, see Section 2).
+
+- `A3_OUTPUT/` – folder containing generated figures (if notebook is run from scratch):
+  * `pipeline_diagram.pdf` – centralised + federated pipeline overview
+  * `federated_diagram.pdf` – simplified federated client‑server architecture
+  * `preprocessing_diagram.png` – data preparation and feature representations
+  * `class_distribution_pie.png`, `length_histogram.png`, `length_boxplot.png` – EDA
+  * `top_words_bar_chart.png`, `top_10_bigrams.png`, `zipf_plot.png` – lexical analysis
+  * `correlation_heatmap.png` – metadata correlation
+  * `wordclouds.png` – spam/ham word clouds
+  * `heterogeneity_runs.png` – federated heterogeneity bar chart (10 runs)
+  * Additional EDA plots are also saved (confusion matrices, etc.) within the notebook.
+
+===============================================================================
+2. Requirements
+===============================================================================
+
+- Python 3.10 or later
+- Recommended packages (minimal versions):
+  * numpy >= 1.23.0
+  * pandas >= 1.5.0
+  * matplotlib >= 3.7.0
+  * seaborn >= 0.12.0
+  * scipy >= 1.10.0
+  * scikit-learn >= 1.2.0
+  * wordcloud >= 1.8.0
+
+The notebook was developed in Google Colab but can be run in any Jupyter environment with these packages installed.
+
+To install all required packages, run:
+
+    pip install -r requirements.txt
+
+(If you prefer to use the exact versions from the Colab environment, run `pip freeze` and filter the list.)
+
+===============================================================================
+3. How to run the notebook
+===============================================================================
+
+1. Ensure `synthetic_sms.csv` is located in the **same folder** as the notebook.
+
+2. Open `A3B_15997359.ipynb` in Jupyter, VS Code, or upload to Google Colab.
+
+3. Run all cells from top to bottom. The notebook will:
+   - Load and clean the SMS dataset
+   - Perform exploratory data analysis (EDA) and save plots to `A3_OUTPUT/`
+   - Train and evaluate the centralised custom Naïve Bayes model (5‑fold grouped CV)
+   - Simulate federated learning (IID baseline, dropout, capacity limits)
+   - Run differential privacy experiments (ε = 0.02 and ε = 1.0)
+   - Generate heterogeneity bar chart and final summary.
+
+Random seeds are fixed (e.g., `random_state=112`, `np.random.seed(112)`) to make the results reproducible. The notebook outputs the final metrics exactly as reported in the presentation and report.
+
+===============================================================================
+4. Notes
+===============================================================================
+
+- The abstract, main implementation diagram, and declaration of generative AI use are provided in `A3reportB15997359.pdf`.
+- The primary explanation of results and methodology is in the video presentation `A3videoB15997359.mp4`.
+- This code is intended as a proof‑of‑concept research implementation, not a production system.
+- If you re-run the notebook, the saved figures in `A3_OUTPUT/` will be overwritten; ensure you back them up if you need the original outputs.
+
+===============================================================================
+End of README
+===============================================================================
